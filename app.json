@@ -1,0 +1,17 @@
+{
+  "name": "packer-demo",
+  "description": "heroku app.json",
+  "scripts": {
+  },
+  "env": {
+    "foo": "bar"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
