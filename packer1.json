@@ -1,0 +1,24 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "gocd/gocd-server:v17.5.0",
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+          "apk --update-cache upgrade",
+          "apk add --update-cache git"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+        "type": "docker-tag",
+        "repository": "packer-demo"
+    }
+  ]
+}
