@@ -1,0 +1,22 @@
+{
+  "variables": {
+    "password": ""
+  },
+  "builders": [
+    {
+      "type":         "null",
+      "communicator": "ssh",
+      "ssh_host":     "127.0.0.1",
+      "ssh_username": "varshavs",
+      "ssh_password": "{{user `password`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+          "ls"
+      ]
+    }
+  ]
+}
