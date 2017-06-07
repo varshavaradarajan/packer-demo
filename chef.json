@@ -1,0 +1,25 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ryansch/chef-solo-centos",
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "yum install -y git",
+        "git clone https://github.com/varshavaradarajan/packer-demo",
+        "chef-client --local-mode packer-demo/infra.rb"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+        "type": "docker-tag",
+        "repository": "packer-demo"
+    }
+  ]
+}
