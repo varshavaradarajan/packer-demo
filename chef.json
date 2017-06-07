@@ -19,7 +19,7 @@
   "post-processors": [
     {
         "type": "docker-tag",
-        "repository": "packer-demo"
+        "repository": "packer-demo-chef"
     }
   ]
 }
